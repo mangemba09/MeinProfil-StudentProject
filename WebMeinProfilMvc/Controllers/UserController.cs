@@ -88,7 +88,6 @@ namespace WebMeinProfilMvc.Controllers
             data.Address = usr.Address;
             data.PhoneNumber = usr.PhoneNumber;
             data.Email = usr.Email;
-            data.UserName = usr.UserName;
             data.Path = uniqueFileName;
 
             var result = await _userManager.UpdateAsync(data);
