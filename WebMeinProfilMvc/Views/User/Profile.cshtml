@@ -1,0 +1,40 @@
+﻿@model WebMeinProfilMvc.Models.AppUser
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h1 class="display-4">Mein Profil</h1>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <table class="table">
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.FullName)</td>
+            <td>@Html.DisplayFor(model => model.FullName)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Email)</td>
+            <td>@Html.DisplayFor(model => model.Email)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.PhoneNumber)</td>
+            <td>@Html.DisplayFor(model => model.PhoneNumber)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayNameFor(model => model.Address)</td>
+            <td>@Html.DisplayFor(model => model.Address)</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayName("Image")</td>
+            <td><img src="/upload/@Url.Content(Model.Path)" width="100" height="100" /></td>
+        </tr>
+    </table>
+</div>
+
+<br />
+<div>
+    <button type="button" onclick="location.href='@Url.Action("Edit", new { id = Model.Id })'" class="btn btn-primary btn-mt-2">Edit</button>
+    <a asp-controller="User" asp-action="Index" class="btn btn-primary btn-mt-2">Home</a>
+</div>

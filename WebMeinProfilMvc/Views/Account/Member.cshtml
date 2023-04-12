@@ -1,0 +1,35 @@
+﻿@model List<dynamic>
+
+@{
+    ViewData["Title"] = "Member";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Member List</h1>
+</div>
+<hr />
+<table class="table table-success table-striped">
+    <thead>
+        <tr>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Profile Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model)
+        {
+            <tr>
+                <td>@member.FullName</td>
+                <td>@member.Email</td>
+                <td>@member.Address</td>
+                <td><img src="@Url.Content("~/upload/" + member.Path)" width="100" height="100" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<div style="text-align:center;">
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary btn-lg">Home</a>
+</div>
